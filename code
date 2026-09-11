@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+int main(){
+    float principal, rate , time , si,ci , n;
+    int b;
+     printf("enter the value of principal , rate and time period(must be in years) : ");
+     scanf("%f %f %f", &principal , &rate , &time);
+     printf("what you want to find ,1) Simple interest \n 2) Compound interest :  ");
+     scanf("%d", &b);
+
+     if(b ==1){
+        si = (principal*rate*time)/100;
+        printf("the simple interest is %f" , si);
+
+     }
+     else if (b ==2)
+     {
+        printf("enter the number of times interest is compunded per year :");
+        scanf("%f", &n);
+        ci = principal*pow((1 + rate/n) , n*time) - principal;
+        printf("the value of compound interest is %f", ci);
+     }
+     
+    return 0;
+}
